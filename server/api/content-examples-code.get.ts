@@ -5,7 +5,7 @@ import components from "#content-examples-code/nitro";
 
 export default defineEventHandler((event) => {
   appendHeader(event, "Access-Control-Allow-Origin", "*");
-  const componentName = (event.context.params["component?"] || "").replace(
+  const componentName = (event.context?.params?.["component?"] || "").replace(
     /\.json$/,
     ""
   );
