@@ -5,8 +5,8 @@ export const useContentSource = () => {
 
   const branches = computed(() => [
     {
-      id: "main",
-      name: "main",
+      id: "ui",
+      name: "ui",
       label: "sse-ui",
       icon: "i-heroicons-cube",
       suffix: `v${config.version}`,
@@ -64,14 +64,14 @@ export const useContentSource = () => {
       return;
     }
 
-    if (b.name === "pro") {
-      router.push("/pro/getting-started");
+    if (b.name === "ui") {
+      router.push("/ui/getting-started");
       return;
     }
 
-    if (branch.value.name === "pro") {
-      if (b.name === "dev") {
-        router.push("/dev/getting-started");
+    if (branch.value.name === "auth") {
+      if (b.name === "auth") {
+        router.push("/auth/getting-started");
       } else {
         router.push("/getting-started");
       }
