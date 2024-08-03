@@ -1,5 +1,3 @@
-import module from "./app/modules/content-examples-code"
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
@@ -16,7 +14,6 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxthq/studio",
     "nuxt-og-image",
-    module
   ],
 
   hooks: {
