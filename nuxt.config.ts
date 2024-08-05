@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     // Temporary workaround for prerender regression. see https://github.com/nuxt/nuxt/issues/27490
     "/": { prerender: true },
     "/api/search.json": { prerender: true },
+    "/ui/components": { redirect: '/ui/components/aside', prerender: false }
   },
 
   eslint: {
