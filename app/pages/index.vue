@@ -69,8 +69,6 @@ useSeoMeta({
 import { getNpmDownloads, getVersion } from "~/composables/getStats";
 const downloads = ref<Number>(0);
 const version = ref<Number>(0)
-console.log(downloads)
-console.log(version)
 export default {
   async mounted() {
     downloads.value = await getNpmDownloads("@sse-ui/nuxt");
