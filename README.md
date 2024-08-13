@@ -126,7 +126,9 @@ Install [Renovate GitHub app](https://github.com/apps/renovate/installations/sel
 
 # ISSUE
 
-"D:\next\sse-nuxt-ui\docs\node_modules\@iconify\vue\package.json" package.json "{
+"D:\next\sse-nuxt-ui\docs\node_modules\@iconify\vue\package.json" package.json "
+```json
+{
   "name": "@iconify/vue",
   "description": "Iconify icon component for Vue 3.",
   "author": "Vjacheslav Trushkin",
@@ -255,3 +257,6 @@ Install [Renovate GitHub app](https://github.com/apps/renovate/installations/sel
     "test": "vitest"
   }
 }"
+```
+
+```yml

@@ -10,6 +10,32 @@ const links = [
   {
     label: "Docs",
     to: "/ui/getting-started",
+    children: [
+      {
+        label: "SSE Nuxt UI",
+        to: "/ui/getting-started",
+        icon: "i-heroicons-ticket",
+        description: "A simple pricing, for solo developers or teams.",
+      },
+      {
+        label: "SSE Auth",
+        to: "/auth",
+        icon: "i-heroicons-ticket",
+        description: "A simple pricing, for solo developers or teams.",
+      },
+      {
+        label: "SSE Icons",
+        to: "/icons",
+        icon: "i-heroicons-ticket",
+        description: "A simple pricing, for solo developers or teams.",
+      },
+      {
+        label: "SSE DayJs",
+        to: "/dayjs",
+        icon: "i-heroicons-ticket",
+        description: "A simple pricing, for solo developers or teams.",
+      },
+    ],
   },
   {
     label: "Releases",
