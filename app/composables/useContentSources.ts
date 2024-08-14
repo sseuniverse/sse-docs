@@ -1,3 +1,5 @@
+import pkg from "@sse-ui/nuxt/package.json";
+
 export const useContentSource = () => {
   const route = useRoute();
   const router = useRouter();
@@ -5,46 +7,29 @@ export const useContentSource = () => {
 
   const branches = computed(() => [
     {
-      id: "ui",
-      name: "ui",
-      label: "sse-ui",
+      id: "main",
+      name: "main",
+      label: "ui",
       icon: "i-heroicons-cube",
-      suffix: `v${config.version}`,
+      suffix: `v${pkg.version}`,
       click: () => select({ name: "main" }),
     },
     {
       id: "auth",
       name: "auth",
-      label: "auth",
+      label: "Auth",
       icon: "i-heroicons-cube-transparent",
-      suffix: "dev",
+      suffix: "auth",
       click: () => select({ name: "auth" }),
-    },
-    {
-      id: "icons",
-      name: "icons",
-      label: "icons",
-      icon: "i-heroicons-cube",
-      click: () => select({ name: "icons" }),
     },
     {
       id: "meta",
       name: "meta",
-      label: "meta",
+      label: "Component Meta",
       icon: "i-heroicons-cube-transparent",
-      suffix: "dev",
-      disabled: false,
+      suffix: "auth",
       click: () => select({ name: "meta" }),
     },
-    {
-        id: "meta",
-        name: "meta",
-        label: "meta",
-        icon: "i-heroicons-cube-transparent",
-        suffix: "dev",
-        disabled: false,
-        click: () => select({ name: "meta" }),
-      },
   ]);
 
   const branch = computed(() =>
@@ -53,8 +38,8 @@ export const useContentSource = () => {
         b.name ===
         (route.path.startsWith("/auth")
           ? "auth"
-          : route.path.startsWith("/icons")
-            ? "icons"
+          : route.path.startsWith("/meta")
+            ? "meta"
             : "main")
     )
   );
@@ -64,29 +49,29 @@ export const useContentSource = () => {
       return;
     }
 
-    if (b.name === "ui") {
-      router.push("/ui/getting-started");
+    if (b.name === "meta") {
+      router.push("/auth");
       return;
     }
 
-    if (branch.value.name === "auth") {
+    if (branch.value.name === "meta") {
       if (b.name === "auth") {
-        router.push("/auth/getting-started");
+        router.push("/auth");
       } else {
-        router.push("/getting-started");
+        router.push("/meta");
       }
 
       return;
     }
 
-    if (b.name === "dev") {
-      if (route.path.startsWith("/dev")) {
+    if (b.name === "auth") {
+      if (route.path.startsWith("/auth")) {
         return;
       }
 
-      router.push(`/dev${route.path}`);
+      router.push(`/auth${route.path}`);
     } else {
-      router.push(route.path.replace("/dev", ""));
+      router.push(route.path.replace("/auth", ""));
     }
   }
 

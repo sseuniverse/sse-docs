@@ -1,3 +1,7 @@
+import { createResolver } from '@nuxt/kit'
+
+const { resolve } = createResolver(import.meta.url)
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
@@ -14,6 +18,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxthq/studio",
     "nuxt-og-image",
+    "nuxt-component-meta",
   ],
 
   hooks: {
@@ -47,6 +52,26 @@ export default defineNuxtConfig({
         commaDangle: "never",
         braceStyle: "1tbs",
       },
+    },
+  },
+
+  componentMeta: {
+    exclude: [
+      "@nuxt/content",
+      "@nuxt/ui-templates",
+      "@nuxtjs/color-mode",
+      "@nuxtjs/mdc",
+      "nuxt/dist",
+      "nuxt-og-image",
+      "nuxt-site-config",
+      resolve("./components")
+    ],
+    metaFields: {
+      type: false,
+      props: true,
+      slots: true,
+      events: false,
+      exposed: false,
     },
   },
 
