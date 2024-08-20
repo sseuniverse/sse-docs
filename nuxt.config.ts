@@ -1,10 +1,10 @@
-import { createResolver } from '@nuxt/kit'
+import { createResolver } from "@nuxt/kit";
 
-const { resolve } = createResolver(import.meta.url)
+const { resolve } = createResolver(import.meta.url);
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2024-08-20",
   devtools: { enabled: true },
   extends: ["@sse-ui/nuxt"],
   colorMode: { disableTransition: true },
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@nuxthq/studio",
     "nuxt-og-image",
-    "nuxt-component-meta",
+    "@sse-ui/nu-meta",
   ],
 
   hooks: {
@@ -55,7 +55,7 @@ export default defineNuxtConfig({
     },
   },
 
-  componentMeta: {
+  sseComponentMeta: {
     exclude: [
       "@nuxt/content",
       "@nuxt/ui-templates",
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
       "nuxt/dist",
       "nuxt-og-image",
       "nuxt-site-config",
-      resolve("./components")
+      resolve("./app/components"),
     ],
     metaFields: {
       type: false,
@@ -74,7 +74,6 @@ export default defineNuxtConfig({
       exposed: false,
     },
   },
-
   site: {
     url: process.env.URL,
   },

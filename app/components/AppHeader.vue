@@ -138,7 +138,7 @@ const links = [
     <template #panel>
       <UAsideLinks :links="links" />
       <UDivider type="dashed" class="my-4" />
-      <!-- <BranchSelector /> -->
+      <BranchSelector />
       <UNavigationTree
         :links="mapContentNavigation(navigation)"
         :multiple="false"
