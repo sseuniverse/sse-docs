@@ -9,7 +9,6 @@ import YamlLang from "shiki/langs/yaml.mjs";
 import PostcssLang from "shiki/langs/postcss.mjs";
 import JavaScriptLang from "shiki/langs/javascript.mjs";
 import TypeScriptLang from "shiki/langs/typescript.mjs";
-import PHPLang from "shiki/langs/php.mjs";
 
 let highlighter;
 export const useShikiHighlighter = () => {
@@ -28,7 +27,6 @@ export const useShikiHighlighter = () => {
         postcss: PostcssLang,
         js: JavaScriptLang,
         ts: TypeScriptLang,
-        php: PHPLang,
       },
     });
   }
